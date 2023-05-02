@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Polja137/MEET/static/css/main.073c9b0a.css",
+    "main.js": "/Polja137/MEET/static/js/main.9775226a.js",
+    "static/js/787.4b564826.chunk.js": "/Polja137/MEET/static/js/787.4b564826.chunk.js",
+    "service-worker.js": "/Polja137/MEET/service-worker.js",
+    "static/media/logo.svg": "/Polja137/MEET/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/Polja137/MEET/index.html",
+    "main.073c9b0a.css.map": "/Polja137/MEET/static/css/main.073c9b0a.css.map",
+    "main.9775226a.js.map": "/Polja137/MEET/static/js/main.9775226a.js.map",
+    "787.4b564826.chunk.js.map": "/Polja137/MEET/static/js/787.4b564826.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.9775226a.js"
+  ]
+}
