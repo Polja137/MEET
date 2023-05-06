@@ -26,7 +26,6 @@
               <p id="result"></p>
               <a id="authURL" href target="_blank">Click to authorize</a>
               <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
-        
               <h4>Step 2: Get your code and exchange for an access token</h4>
               <p>
                 After you’re redirected back to your Meet app on GitHub, copy the code
@@ -45,7 +44,6 @@
               const getURLElement = document.getElementById("getURL");
               const resultElement = document.getElementById("result");
               const resultLink = document.getElementById("authURL");
-              // Replace this with your own endpoint
               const getAuthURL = " https://0ktzvkvy7i.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
         
               getURLElement.onclick = function () {
