@@ -20,8 +20,8 @@ const credentials = {
   auth_uri: "https://accounts.google.com/o/oauth2/auth",
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
-  redirect_uris: ["https://Polja137.github.io/MEET"],
-  javascript_origins: ["https://Polja137.github.io", "http://localhost:3000"],
+  redirect_uris: ["https://polja137.github.io/MEET"],
+  javascript_origins: ["https://polja137.github.io", "http://localhost:3000"],
 };
 
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
@@ -140,6 +140,7 @@ module.exports.getAccessToken = async (event) => {
           statusCode: 200,
           headers: {
             'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true,
           },
           body: JSON.stringify({ events: results.data.items }),
         };
