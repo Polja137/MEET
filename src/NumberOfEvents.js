@@ -21,9 +21,7 @@ class NumberOfEvents extends Component {
           className="noe-input"
           type="number"
           value={noe}
-          onChange={event => {
-            this.changeNOE(event.target.value);
-          }}
+          onChange={event => {this.changeNOE(event.target.value);}}
         >
         </input>
     </div>
