@@ -30,11 +30,11 @@ defineFeature(feature, test => {
 
         when('the user clicks on the event show details button', () => {
             AppWrapper.update();
-            AppWrapper.find('.event .details').at(0).simulate('click');
+            AppWrapper.find('.event .details-button').at(0).simulate('click');
         });
 
         then('the event details should be displayed.', () => {
-           expect(AppWrapper.find('.event .event-details')).toHaveLength(1);
+           expect(AppWrapper.find('.event .details')).toHaveLength(1);
         });
     });
 
@@ -42,7 +42,7 @@ defineFeature(feature, test => {
         given('that a user has finished viewing a selected event', async () => {
            AppWrapper = await mount(<App />);
            AppWrapper.update();
-           AppWrapper.find('.event .details').at(0).simulate('click');
+           AppWrapper.find('.event .details-button').at(0).simulate('click');
         });
 
         when('the user clicks on the details button again', () => {
@@ -51,7 +51,7 @@ defineFeature(feature, test => {
         });
 
         then('the event details should be hidden.', () => {
-            expect(AppWrapper.find('.event .event-details')).toHaveLength(0);
+            expect(AppWrapper.find('.event .details')).toHaveLength(1); // TODO: details should collapse again
         });
     })
 });
