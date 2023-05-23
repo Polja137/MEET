@@ -75,9 +75,8 @@ describe("<App /> integration", () => {
   test("events state changes number of events changes", () => {
     const AppWrapper = mount(<App />);
     const eventCount = AppWrapper.state("eventCount");
-    expect(eventCount).toEqual(AppWrapper.find(NumberOfEvents).props().query);
+    expect(eventCount).toEqual(AppWrapper.find(NumberOfEvents).props().noe);
     AppWrapper.unmount();
   });
-
  
 });
