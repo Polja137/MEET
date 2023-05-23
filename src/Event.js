@@ -14,7 +14,7 @@ class Event extends Component {
   render() {
     const { event } = this.props;
     return (
-      <div>
+      <div className="event">
         <b className='title'>{event.summary}</b>
         {!this.state.hide && (
           <ul className='details'>
@@ -25,7 +25,7 @@ class Event extends Component {
           </ul>
         )}
         <button
-          className='detailsButton'
+          className='details-button'
           onClick={() => this.handleItemClicked()}
         >
           Details

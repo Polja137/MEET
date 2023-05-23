@@ -11,7 +11,7 @@ describe("<Event /> component", () => {
   });
 
   test("toggle boolean", () => {
-    const display = EventWrapper.find(".detailsButton");
+    const display = EventWrapper.find(".details-button");
     display.simulate("click");
     expect(EventWrapper.state("hide")).toBe(false);
   });
