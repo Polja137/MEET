@@ -2,8 +2,21 @@ import React, { Component } from "react";
 import "./App.css";
 import CitySearch from "./CitySearch";
 import EventList from "./EventList";
+import EventGenre from "./EventGenre";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
+
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  // Legend,
+} from 'recharts';
+
 
 
 class App extends Component {
@@ -64,6 +77,18 @@ class App extends Component {
     }
   }
 
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
+      const city = location.split(', ').shift();
+      return { city, number };
+    });
+    return data;
+  };
+
   render() {
     return (
       <div className='App'>
@@ -76,6 +101,32 @@ class App extends Component {
           noe={this.state.eventCount}
           updateEvents={this.updateEvents}
         />
+        <div className="charts">
+          <ResponsiveContainer height={400} width={400}>
+              <ScatterChart
+                margin={{
+                  top: 20,
+                  right: 0,
+                  bottom: 20,
+                  left: 0,
+                }}
+              >
+                <CartesianGrid strokeDasharray='3 3' />
+                <XAxis dataKey='city' type='category' name='city' />
+                <YAxis
+                  dataKey='number'
+                  type='number'
+                  name='number of events'
+                  allowDecimals={false}
+                />
+
+                <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                {/* <Legend /> */}
+                <Scatter data={this.getData()} fill='#2197F3' />
+              </ScatterChart>
+          </ResponsiveContainer>
+          <EventGenre events={this.state.events} />
+        </div>
         <EventList events={this.state.events} />
       </div>
     );

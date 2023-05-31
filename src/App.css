@@ -211,3 +211,10 @@ input[type="number"] {
     margin: 0 auto;
   }
 }
+
+/* Delete this if you are going for bootstrap grid (rows and cols) */
+.charts {
+  display: flex;
+  justify-content: space-between;
+}
+
